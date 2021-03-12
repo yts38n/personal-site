@@ -1,0 +1,55 @@
+@import "cssReset";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
+
+/* color */
+$light: #ffffff;
+$dark: #000000;
+$spacer: 8px;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Roboto", "Noto Sans TC", sans-serif;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.fz {
+    &-xs {
+        font-size: 20px;
+        line-height: 1.4; //28px
+    }
+    &-sm {
+        font-size: 20px;
+        line-height: 1.5; //30px
+    }
+    &-md {
+        font-size: 24px;
+        line-height: 1.5; //36px
+    }
+    &-lg {
+        font-size: 24px;
+        line-height: 1.75; //42px
+    }
+}
+.d-flex {
+    display: flex;
+}
+/*"to" does not include the last value, "through" does.*/
+@for $i from 1 through 8 {
+    .mb-#{$i} {
+        margin-bottom: $i*$spacer;
+    }
+}
+
+
+// background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week2/banner.png");
