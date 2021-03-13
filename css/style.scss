@@ -1,21 +1,163 @@
-@import "cssReset.css";
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+@import "cssReset";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
 
-*,*::before,*::after {
+/* color */
+$light: #ffffff;
+$dark: #000000;
+$spacer: 8px;
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
 body {
     font-family: "Roboto", "Noto Sans TC", sans-serif;
+    font-style: italic;
 }
 
 img {
     max-width: 100%;
     height: auto;
-    display: block;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.fz {
+    &-xs {
+        font-size: 20px;
+        line-height: 1.4; //28px
+    }
+
+    &-sm {
+        font-size: 20px;
+        line-height: 1.5; //30px
+    }
+
+    &-md {
+        font-size: 24px;
+        line-height: 1.2; //28px
+    }
+
+    &-lg {
+        font-size: 24px;
+        line-height: 1.5; //36px
+    }
+}
+
+.h1 {
+    font-weight: 900;
+    font-size: 80px;
+    line-height: 94px;
+}
+
+.h2 {
+    font-size: 64px;
+    line-height: 75px;
+}
+
+.h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+/*"to" does not include the last value, "through" does.*/
+@for $i from 1 through 8 {
+    .mb-#{$i} {
+        margin-bottom: $i*$spacer;
+    }
+
+    .pb-#{$i} {
+        padding-bottom: $i*$spacer;
+    }
+}
+
+.content {
+    text-align: center;
+    padding-top: $spacer*8;
+}
+
+.content-dark {
+    @extend .content;
+    background-color: $dark;
+    color: $light;
+}
+
+.cover {
+    height: 958px;
+    background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week2/banner.png");
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+
+    div {
+        width: 304px;
+        color: $light;
+
+        ul {
+            justify-content: space-around;
+        }
+    }
+}
+
+hr {
+    width: 384px;
+    margin: 0 auto;
+}
+
+.redDot li {
+    margin-bottom: $spacer*4;
+}
+
+.dot {
+    height: 22px;
+    width: 22px;
+    background-color: #891818;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: $spacer*2;
+}
+
+.brand {
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    li {
+        margin-bottom: $spacer*5;
+
+        &:nth-of-type(1) {
+            margin: 0px $spacer*25.5 $spacer*5;
+        }
+    }
+}
+
+.work {
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    li {
+        font-weight: 500;
+        margin-bottom: $spacer*7;
+
+        img {
+            margin-bottom: $spacer;
+        }
+    }
+}
+
+.contact {
+    padding-bottom: $spacer*10;
+
+    li {
+        margin-bottom: $spacer*2;
+    }
 }
