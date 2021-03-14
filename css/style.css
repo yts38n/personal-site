@@ -196,22 +196,23 @@ img {
 
 .cover {
   height: 958px;
-  background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week2/banner.png");
+  background-image: url("/img/banner.png");
   background-size: cover;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.cover div {
-  width: 304px;
   color: #ffffff;
 }
 
-.cover div ul {
+.cover ul {
+  width: 304px;
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
